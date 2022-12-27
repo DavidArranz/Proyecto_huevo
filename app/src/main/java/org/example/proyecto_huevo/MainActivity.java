@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -38,14 +39,19 @@ public class MainActivity extends AppCompatActivity {
                 int id90 = rb90sec.getId(), id3 = rb3min.getId(), id4 = rb4min.getId(), id9 = rb9min.getId();
                 int rb = rg.getCheckedRadioButtonId();
                 long milis = 0;
+                ivHuevo.setVisibility(View.VISIBLE);
                 if (id90 == rb) {
                     milis = 90000;
+                    ivHuevo.setImageResource(R.drawable.b_pocfet);
                 } else if (id3 == rb) {
-                milis = 4 * 60 * 1000;
+                milis = 3 * 60 * 1000;
+                    ivHuevo.setImageResource(R.drawable.a_huevofrito);
                 }else if(id4 == rb) {
-                    milis = 9 * 60 * 1000;
+                    milis = 4 * 60 * 1000;
+                    ivHuevo.setImageResource(R.drawable.a_huevo_mollet);
                 }else if(id9==rb){
-                        milis = 3*60*1000;
+                    milis = 9*60*1000;
+                    ivHuevo.setImageResource(R.drawable.a_huevoduro);
                 }
                 stopTimer();
                 startTimer(milis);
